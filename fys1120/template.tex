@@ -87,7 +87,7 @@
 \end{align*}
 
 \[
-	\vec{E}= \frac{ \vec{F}}{q} = \frac{Q}{4 \pi \epsilon_0} \frac{\uvec{R}}{R^3}
+	\vec{E}= \frac{ \vec{F}}{q} = \frac{Q}{4 \pi \epsilon_0} \frac{\uvec{R}}{R^2}
 \] 
 
 \[
@@ -118,7 +118,7 @@
 \] 
 
 \[
-	V(\vec{r}) = \frac{ \vec{p} \cdot \uvec{r}}{4 \pi \epsilon_0 r^2}
+	V(\vec{r}) = \frac{ \vec{P} \cdot \uvec{r}}{4 \pi \epsilon_0 r^2}
 \] 
 \section{Gauss lov og dielektriske materialer}
 \[
@@ -133,21 +133,30 @@ Hvor mye ladning
 	\Delta Q_b &= -Q \cdot Nv \Delta s \vec{d} \cdot \uvec{n}\\
 		   &= -Q \cdot Nv \vec{d} \cdot \Delta \vec{s} \\
 		   &= -Nv \left( Q \vec{d} \right) \cdot \Delta \vec{s}\\
-		   &= - Nv \vec{p} \cdot \Delta \vec{s}\\
-		   &= - \frac{ N \vec{p}}{v} \cdot \Delta \vec{s} \\
-		   &= - \vec{p} \cdot \Delta \vec{s}
+		   &= - Nv \vec{P} \cdot \Delta \vec{s}\\
+		   &= - \frac{ N \vec{P}}{v} \cdot \Delta \vec{s} \\
+		   &= - \vec{P} \cdot \Delta \vec{s}
 \end{align*} 
 \[
-	Q_b = - \oint \limits_S \vec{p} \cdot \dd{ \vec{s}} 
+	Q_b = - \oint \limits_S \vec{P} \cdot \dd{ \vec{s}} 
 \] 
 
 Bundet volum-ladningstethet
 \begin{align*}
-	Q_b = \int \limits_v \rho_{v,b} \dd{ v} &= - \oint \limits_s \vec{p} \cdot \dd{ \vec{s}} \\
-						&= - \oint \limits_S \vec{p} \cdot \dd{ \vec{s}}\\
-						&= - \int\limits_v \nabla \cdot \vec{p} \dd{ v} 
+	Q_b = \int \limits_v \rho_{v,b} \dd{ v} &= - \oint \limits_s \vec{P} \cdot \dd{ \vec{s}} \\
+						&= - \oint \limits_S \vec{P} \cdot \dd{ \vec{s}}\\
+						&= - \int\limits_v \nabla \cdot \vec{P} \dd{ v} 
 \end{align*}
-\[
-	\boxed{\rho_{v,b} = - \nabla \cdot \vec{p}}
-\] 
+\begin{align*}
+	\boxed{
+		\begin{aligned}
+			\rho_{v,b} &= - \nabla \cdot \vec{P}\\
+			\rho_{s,b}  &= \vec{P} \cdot \uvec{n}
+	\end{aligned}}
+\end{align*}
+Grensebetingelser
+\begin{align*}
+	E_{1,t} &= E_{2,t}\\
+	D_{1,n}-D_{2,n} &= \rho_{fri,s}
+\end{align*}
 \end{document}
