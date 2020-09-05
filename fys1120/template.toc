@@ -1,0 +1,4 @@
+\babel@toc {norsk}{}
+\contentsline {section}{\numberline {1}Elektrisk felt}{1}{section.1}%
+\contentsline {section}{\numberline {2}Elekrisk potensial}{1}{section.2}%
+\contentsline {section}{\numberline {3}Gauss lov og dielektriske materialer}{1}{section.3}%

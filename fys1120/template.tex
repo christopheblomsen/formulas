@@ -1,0 +1,153 @@
+% Standard stuff
+	\documentclass[a4paper,10pt,english]{article}
+	\usepackage[utf8]{inputenc}
+	\usepackage[norsk]{babel}
+	\usepackage{amsmath,graphicx,varioref,verbatim,amsfonts,geometry,enumerate,commath}
+	% colors in text
+	\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+	% Hyper refs
+	\usepackage[colorlinks]{hyperref}
+	%inkspace
+	\usepackage{import}
+	\usepackage{xifthen}
+	\usepackage{pdfpages}
+	\usepackage{transparent}
+
+%Colour scheme for hyperlinks
+	\hypersetup{%
+		colorlinks,
+		citecolor=Blue,
+		linkcolor=Blue,
+		urlcolor=Blue}
+
+% Document formatting
+	\setlength{\parindent}{0mm}
+	\setlength{\parskip}{1.5mm}
+
+%Color scheme for listings
+	\usepackage{textcomp}
+	\definecolor{listinggray}{gray}{0.9}
+	\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+
+%Listings configuration
+	\usepackage{listings}
+	\lstset{
+		backgroundcolor=\color{lbcolor},
+		tabsize=4,
+		rulecolor=,
+		language=python,
+		basicstyle=\scriptsize,
+		upquote=true,
+		aboveskip={1.5\baselineskip},
+		columns=fixed,
+		numbers=left,
+		showstringspaces=false,
+		extendedchars=true,
+		breaklines=true,
+		prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+		frame=single,
+		showtabs=false,
+		showspaces=false,
+		showstringspaces=false,
+		identifierstyle=\ttfamily,
+		keywordstyle=\color[rgb]{0,0,1},
+		commentstyle=\color[rgb]{0.133,0.545,0.133},
+		stringstyle=\color[rgb]{0.627,0.126,0.941}
+	}
+
+%new commands
+	\newcommand{\dd}[1]{\mathrm{d}#1}
+	\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+
+	\newcommand{\incfig}[2][1]{%
+		\def\svgwidth{#1\columnwidth}
+		\import{./figures/}{#2.pdf_tex}
+	}
+	\pdfsuppresswarningpagegroup = 1
+
+%opening
+	\title{Formler fys1120}
+	\author{
+		Christophe Blomsen\\
+		\texttt{\href{mailto:chriskbl@student.matnat.uio.no}{chriskbl@student.matnat.uio.no}}
+		}
+
+\begin{document}
+%Titlepage
+	\begin{titlepage}
+	\maketitle
+	\tableofcontents
+	\end{titlepage}
+
+
+\section{Elektrisk felt}
+
+\begin{align*}
+	\vec{F} = \frac{Qq}{4 \pi \epsilon_0}	\frac{ \uvec{R}}{R^2} = \frac{ Qq}{4 \pi \epsilon_0} \frac{ \vec{R}}{R^3}
+\end{align*}
+
+\[
+	\vec{E}= \frac{ \vec{F}}{q} = \frac{Q}{4 \pi \epsilon_0} \frac{\uvec{R}}{R^3}
+\] 
+
+\[
+	\dd{ \vec{E}} = \frac{ \dd{ q} }{4 \pi \epsilon_0} \frac{ \uvec{R}}{R^2}
+\] 
+
+\[
+\rho_l = \frac{ Q}{L}
+\] 
+
+\[
+	V(\vec{r}) = \int \limits_{\vec{r}}^{ref} \vec{E} \cdot \dd{ \vec{l}} 
+\] 
+
+\[
+	\oint \limits_C \vec{E} \cdot \vec{l} = 0 \Leftrightarrow \iint \limits_S \nabla \times E \cdot \dd{ S} =0
+\] 
+\section{Elekrisk potensial}
+
+\[
+	E = - \nabla V
+\] 
+\[
+	E = \int \limits_V \rho \frac{ \dd{ v} }{4 \pi \epsilon_0} \frac{ \uvec{R}}{R^2}
+\] 
+\[
+	V = \int \frac{\rho \dd{ V} }{4 \pi \epsilon_0 R}
+\] 
+
+\[
+	V(\vec{r}) = \frac{ \vec{p} \cdot \uvec{r}}{4 \pi \epsilon_0 r^2}
+\] 
+\section{Gauss lov og dielektriske materialer}
+\[
+\Delta v = \Delta s d \cos( \theta) 
+\] 
+Antall dipoler i $\Delta v$
+ \[
+	 Nv \Delta v = Nv \Delta s \vec{d} \cdot \uvec{n}
+\] 
+Hvor mye ladning
+\begin{align*}
+	\Delta Q_b &= -Q \cdot Nv \Delta s \vec{d} \cdot \uvec{n}\\
+		   &= -Q \cdot Nv \vec{d} \cdot \Delta \vec{s} \\
+		   &= -Nv \left( Q \vec{d} \right) \cdot \Delta \vec{s}\\
+		   &= - Nv \vec{p} \cdot \Delta \vec{s}\\
+		   &= - \frac{ N \vec{p}}{v} \cdot \Delta \vec{s} \\
+		   &= - \vec{p} \cdot \Delta \vec{s}
+\end{align*} 
+\[
+	Q_b = - \oint \limits_S \vec{p} \cdot \dd{ \vec{s}} 
+\] 
+
+Bundet volum-ladningstethet
+\begin{align*}
+	Q_b = \int \limits_v \rho_{v,b} \dd{ v} &= - \oint \limits_s \vec{p} \cdot \dd{ \vec{s}} \\
+						&= - \oint \limits_S \vec{p} \cdot \dd{ \vec{s}}\\
+						&= - \int\limits_v \nabla \cdot \vec{p} \dd{ v} 
+\end{align*}
+\[
+	\boxed{\rho_{v,b} = - \nabla \cdot \vec{p}}
+\] 
+\end{document}
